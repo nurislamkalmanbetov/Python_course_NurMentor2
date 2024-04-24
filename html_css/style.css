@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: blue;
+}
+
+p {
+    font-size: 16px;
+}
+
+.important {
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
