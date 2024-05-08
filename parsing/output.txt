@@ -1,0 +1,61 @@
+Price	Price per m2	Title	Location
+8,000,000
+EGP	- 66,666 EGP/m	Own in Mountain View ALIVA with exclusive offers at The Address Property Show	Greater Cairo  /  Aliva Compound - Mountain View
+9,000,000
+EGP	- 741 EGP/m	Own in Palm Hills Compound with exclusive offers at The Address Property Show	Greater Cairo  /  Cleo Water Residence - Palm Hills New Cairo - PHNC
+8,000,000
+EGP	- 66,666 EGP/m	Own in Al Bosco City Compound with exclusive offers at The Address Property Show	Greater Cairo  /  La Natura - IL Bosco City Compound
+7,000,000
+EGP	- 60,869 EGP/m	Bloomfields Compound with exclusive offers at The Address Property Show	Greater Cairo  /  Bloomfields Compound - Tatweer Misr
+16,500,000
+EGP	- 94,285 EGP/m	Administrative units for sale with exclusive offers at The Address Property Show	Greater Cairo  /  Zed East Compound - ORA
+8,745,000
+EGP	- 116,600 EGP/m	Apartments for sale in Zed East Compound with exclusive offers at The Address Property Show	Greater Cairo  /  Zed East Compound - ORA
+7,000,000
+EGP	- 53,846 EGP/m	Own in Taj City with exclusive offers at The Address Property Show	Greater Cairo  /  Origami Gardens - Taj City Compound
+5,000,000
+EGP	- 44,642 EGP/m	Own in Sarai Compound with exclusive offers at The Address Property Show	Greater Cairo  /  Cavana Springs - Sarai Compound
+16,266,000
+EGP	- 123,227 EGP/m	At the lowest price in Zed East Compound, an apartment for sale in a prime location near Al Rehab City	Greater Cairo  /  Zed East Compound - ORA
+8,745,000
+EGP	- 116,600 EGP/m	Ora Company offers apartments in a fully-serviced residential compound in New Cairo with a 10% down payment.	Greater Cairo  /  Zed East Compound - ORA
+8,800,000
+EGP	- 68,750 EGP/m	Apartment for sale, 128 meters, semi-finished, in Creek Town Compound -cazar, 7-year installments	Greater Cairo  /  Creek Town Compound - IL Cazar
+7,000,000
+EGP	- 54,687 EGP/m	Own in Creek Town with exclusive offers at The Address Property Show	Greater Cairo  /  Creek Town Compound - IL Cazar
+14,300,000
+EGP	- 65,000 EGP/m	For sale - Penthouse 220 M² Without Finish in Creek Town Compound - IL Cazar	Greater Cairo  /  Creek Town Compound - IL Cazar
+12,000,000
+EGP	- 75,000 EGP/m	Townhouse at East New Cairo, 5% down payment; In installments up to 9 years	Greater Cairo  /  At East Compound - Al Ahly Sabbour
+13,412,000
+EGP	- 82,790 EGP/m	Apartments For sale in Galleria Residence - Arabia	Greater Cairo  /  Galleria Residence - Arabia
+5,571,047
+EGP	- 49,741 EGP/m	بمقدم 10% شقة اقساط حتى 8 سنوات كمبوند سراي	Greater Cairo  /  Rai - Sarai Compound
+14,825,000
+EGP	- 125,635 EGP/m	Apartments For sale in Garden Residence Hyde Park	Greater Cairo  /  Garden Residence Hyde Park
+14,600,000
+EGP	- 81,111 EGP/m	I Villa Garden 180 m For sale in Aliva Compound - Mountain View	Greater Cairo  /  Aliva Compound - Mountain View
+10,483,207
+EGP	- 68,517 EGP/m	Apartment for sale, immediate delivery, no down payment and installments over 5 years	Greater Cairo  /  Rock Vera Compound - Al Batal
+7,076,869
+EGP	- 54,021 EGP/m	بمقدم 10% شقة اقساط حتى 8 سنوات كمبوند سراي	Greater Cairo  /  Rai - Sarai Compound
+5,140,757
+EGP	- 46,734 EGP/m	شقق فى كمبوند سراي - مدينة مصر للتطوير 110 متر² بدون تشطيب للبيع	Greater Cairo  /  Sarai Compound - Madinet Masr
+16,998,000
+EGP	- 72,331 EGP/m	Duplex For sale in Mountain View Mostakbal City Compound	Greater Cairo  /  Mountain View Mostakbal City Compound
+8,368,000
+EGP	- 67,483 EGP/m	Apartments 124 M² For sale in The Median Residence - Egygab	Greater Cairo  /  The Median Residence - Egygab
+3,872,000
+EGP	- 88,000 EGP/m	44m clinic for sale, ground floor, ready to move, finished, with air conditioners, 30% down payment, Fifth Settlement	Greater Cairo  /  Ozone Medical Center - Catalyst
+47,600,000
+EGP	- 200,000 EGP/m	Commercial unit for sale, area of 238 square meters, Elegantry Mall, Fifth Settlement, with a 30% down payment, immediate receipt	Greater Cairo  /  Elegantry Mall - Catalyst
+7,984,666
+EGP	- 56,628 EGP/m	بالتقسيط علي٨ سنوات شقه 114متر 2غرفة نوم في تاج سيتي	Greater Cairo  /  Club Side - Taj City Compound
+14,981,131
+EGP	- 72,372 EGP/m	بتقسيط علي٨ سنوات دوبليكس ٢٠٧ متر ٤ غرفة نوم في اوريجامي	Greater Cairo  /  Origami Gardens - Taj City Compound
+11,675,354
+EGP	- 74,842 EGP/m	بتقسيط علي٨ سنوات شقه 156متر 3غرف نوم في اوريجامي	Greater Cairo  /  Origami Gardens - Taj City Compound
+4,070,000
+EGP	- 20,871 EGP/m	Apartment with Garden For sale in Fourth Neighborhood	Greater Cairo  /  Fourth Neighborhood
+4,930,000
+EGP	- 20,714 EGP/m	Apartments For sale in Second Neighborhood	Greater Cairo  /  Second Neighborhood
