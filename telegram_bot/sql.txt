@@ -1,0 +1,61 @@
+SQL 
+
+DDL (Data Definition Language) - Язык определения данных. Эти запросы используются 
+для создания, изменения и удаления структуры базы данных и ее объектов, таких как 
+таблицы, индексы и представления. 
+Примеры команд DDL включают CREATE TABLE, ALTER TABLE и DROP TABLE.
+
+DML (Data Manipulation Language): Язык манипулирования данными. Эти запросы 
+используются для добавления, изменения, удаления и выборки данных из таблиц. 
+Основные операции DML включают INSERT, UPDATE, DELETE и SELECT.
+
+DCL (Data Control Language): Язык управления данными. Эти запросы 
+используются для управления правами доступа к данным в базе данных. Операции 
+DCL включают GRANT (предоставление прав доступа) и REVOKE (отзыв прав доступа).
+
+TCL (Transaction Control Language): Язык управления транзакциями. 
+Эти запросы используются для управления транзакциями в базе данных, 
+такими как начало транзакции, 
+фиксация изменений и откат транзакции. Операции TCL включают COMMIT и ROLLBACK.
+
+________________________________________________________________________________
+
+1) CREATE DATABASE company;
+2) USE company;
+3) CREATE TABLE positions (
+    position_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT
+);
+
+4) CREATE TABLE employers (
+    employer_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    location VARCHAR(255),
+    industry VARCHAR(255)
+);
+
+5) CREATE TABLE employees (
+    employee_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    position_id INT,
+    employer_id INT,
+    FOREIGN KEY (position_id) REFERENCES positions(position_id),
+    FOREIGN KEY (employer_id) REFERENCES employers(employer_id)
+);
+
+6) INSERT INTO positions (title, description) VALUES
+('Software Developer', 'Develops software applications.'),
+('Marketing Manager', 'Manages marketing campaigns.'),
+('HR Specialist', 'Handles human resources tasks.');
+
+7) INSERT INTO employers (name, location, industry) VALUES
+('ABC Corporation', 'New York', 'Technology'),
+('XYZ Inc.', 'Los Angeles', 'Entertainment'),
+('123 Industries', 'Chicago', 'Manufacturing');
+
+8) INSERT INTO employees (first_name, last_name, position_id, employer_id) VALUES
+('John', 'Doe', 1, 1),
+('Jane', 'Smith', 2, 2),
+('Mike', 'Johnson', 3, 3);
