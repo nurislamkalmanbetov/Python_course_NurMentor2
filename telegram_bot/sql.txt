@@ -59,3 +59,69 @@ ________________________________________________________________________________
 ('John', 'Doe', 1, 1),
 ('Jane', 'Smith', 2, 2),
 ('Mike', 'Johnson', 3, 3);
+________________________________________________________________________________
+
+CREATE TABLE salaries (
+    salary_id INT AUTO_INCREMENT PRIMARY KEY,
+    employee_id INT,
+    amount DECIMAL(10, 2),
+    start_date DATE,
+    end_date DATE,
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+
+INSERT INTO salaries (employee_id, amount, start_date, end_date) VALUES
+(1, 5000.00, '2024-01-01', '2024-12-31'),
+(2, 6000.00, '2024-02-01', '2024-12-31'),
+(3, 5500.00, '2024-03-01', '2024-12-31');
+_________________________________________________________
+
+CREATE TABLE grafic_raboty (
+    schedule_id INT AUTO_INCREMENT PRIMARY KEY,
+    employee_id INT,
+    start_time TIME,
+    end_time TIME,
+    work_date DATE,
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+
+INSERT INTO work_schedule (employee_id, start_time, end_time, work_date) VALUES
+(1, '09:00:00', '17:00:00', '2024-05-24'),
+(2, '08:30:00', '16:30:00', '2024-05-24'),
+(3, '10:00:00', '18:00:00', '2024-05-24');
+________________________________
+
+CREATE TABLE addresses (
+    address_id INT AUTO_INCREMENT PRIMARY KEY,
+    employee_id INT,
+    address_line1 VARCHAR(255),
+    address_line2 VARCHAR(255),
+    city VARCHAR(255),
+    state VARCHAR(255),
+    postal_code VARCHAR(10),
+    country VARCHAR(255),
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+
+INSERT INTO addresses (employee_id, address_line1, address_line2, city, state, postal_code, country) VALUES
+(1, '123 Main St', NULL, 'New York', 'NY', '10001', 'USA'),
+(2, '456 Elm St', NULL, 'Los Angeles', 'CA', '90001', 'USA'),
+(3, '789 Oak St', 'Apt 202', 'Chicago', 'IL', '60601', 'USA');
+________________________________
+
+1) SHOW TABLES; 
+2) SELECT name FROM employers;
+3) SELECT * FROM salaries;
+4) SELECT employee_id, amount FROM salaries WHERE amount > 5000;
+5) SELECT * FROM addresses;
+6) SELECT * FROM employees; 
+7) SELECT 
+    e.first_name,
+    e.last_name,
+    a.address_line1,
+    a.city,
+    a.country
+FROM 
+    employees e
+JOIN 
+    addresses a ON e.employee_id = a.employee_id;

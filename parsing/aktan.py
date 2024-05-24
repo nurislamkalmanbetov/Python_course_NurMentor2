@@ -41,9 +41,11 @@ def get_data(html):
 def main():
     URL = 'https://www.house.kg'
     html = get_html(URL)
+    
     if html:
         links = get_links(html)
         print("Ссылки и данные:")
+
         for link in links:
             post_html = get_html(link)
             if post_html:
