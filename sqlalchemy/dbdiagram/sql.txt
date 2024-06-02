@@ -125,3 +125,56 @@ FROM
     employees e
 JOIN 
     addresses a ON e.employee_id = a.employee_id;
+
+____________________________________________new
+
+CREATE TABLE projects (
+    project_id INT AUTO_INCREMENT PRIMARY KEY,
+    project_name VARCHAR(255) NOT NULL,
+    start_date DATE,
+    end_date DATE,
+    budget DECIMAL(15, 2)
+);
+
+INSERT INTO projects (project_name, start_date, end_date, budget) VALUES
+('Project Alpha', '2024-01-01', '2024-06-30', 100000.00),
+('Project Beta', '2024-02-01', '2024-08-31', 150000.00),
+('Project Gamma', '2024-03-01', '2024-12-31', 200000.00);
+
+____________________________________________
+
+CREATE TABLE tasks (
+    task_id INT AUTO_INCREMENT PRIMARY KEY,
+    project_id INT,
+    employee_id INT,
+    task_name VARCHAR(255) NOT NULL,
+    due_date DATE,
+    status VARCHAR(50),
+    FOREIGN KEY (project_id) REFERENCES projects(project_id),
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+
+INSERT INTO tasks (project_id, employee_id, task_name, due_date, status) VALUES
+(1, 1, 'Design Database Schema', '2024-02-15', 'In Progress'),
+(2, 2, 'Develop Marketing Strategy', '2024-03-01', 'Not Started'),
+(3, 3, 'Set Up HR System', '2024-04-01', 'Completed');
+
+____________________________________________
+
+CREATE TABLE experience (
+    experience_id INT AUTO_INCREMENT PRIMARY KEY,
+    employee_id INT,
+    company_name VARCHAR(255) NOT NULL,
+    position VARCHAR(255) NOT NULL,
+    start_date DATE,
+    end_date DATE,
+    description TEXT,
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+
+INSERT INTO experience (employee_id, company_name, position, start_date, end_date, description) VALUES
+(1, 'Tech Solutions', 'Software Engineer', '2018-01-01', '2020-12-31', 'Developed software solutions for clients.'),
+(2, 'Marketing Experts', 'Marketing Specialist', '2017-06-01', '2021-05-31', 'Managed marketing campaigns and strategies.'),
+(3, 'HR Innovators', 'HR Assistant', '2019-03-01', '2023-02-28', 'Assisted with HR tasks and employee relations.');
+
+___________________________________________ 

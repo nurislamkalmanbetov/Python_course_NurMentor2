@@ -1,0 +1,4 @@
+https://docs.sqlalchemy.org/en/20/orm/quickstart.html
+
+1) pip install SQLalchemy 
+2) pip install PyMysql  

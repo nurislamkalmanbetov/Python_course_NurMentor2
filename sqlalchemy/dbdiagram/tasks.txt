@@ -1,0 +1,71 @@
+Получить список всех сотрудников и их график работы:
+SELECT 
+    e.first_name, 
+    e.last_name, 
+    gr.start_time, 
+    gr.end_time, 
+    gr.work_date
+FROM 
+    employees e
+JOIN 
+    grafic_raboty gr ON e.employee_id = gr.employee_id;
+____________________________________________________________________________
+Вывести адреса всех сотрудников, проживающих в 'New York':
+SELECT 
+    a.address_line1, 
+    a.city, 
+    a.state, 
+    a.postal_code, 
+    a.country
+FROM 
+    addresses a
+WHERE 
+    a.city = 'New York';
+____________________________________________________________________________
+Получить список всех проектов с их бюджетом:
+SELECT 
+    project_name, 
+    budget
+FROM 
+    projects;
+Средние задачи:
+____________________________________________________________________________
+Получить список задач и информацию о сотрудниках, выполняющих эти задачи:
+SELECT 
+    t.task_name, 
+    t.due_date, 
+    t.status, 
+    e.first_name, 
+    e.last_name
+FROM 
+    tasks t
+JOIN 
+    employees e ON t.employee_id = e.employee_id;
+____________________________________________________________________________
+Найти всех сотрудников, у которых график работы начинается до 9:00 утра:
+SELECT 
+    e.first_name, 
+    e.last_name, 
+    gr.start_time
+FROM 
+    employees e
+JOIN 
+    grafic_raboty gr ON e.employee_id = gr.employee_id
+WHERE 
+    gr.start_time < '09:00:00';
+___________________________________________________________________________
+Получить список сотрудников, участвующих в проекте 'Project Alpha', и их задачи:
+SELECT 
+    e.first_name, 
+    e.last_name, 
+    t.task_name, 
+    t.due_date, 
+    t.status
+FROM 
+    employees e
+JOIN 
+    tasks t ON e.employee_id = t.employee_id
+JOIN 
+    projects p ON t.project_id = p.project_id
+WHERE 
+    p.project_name = 'Project Alpha';

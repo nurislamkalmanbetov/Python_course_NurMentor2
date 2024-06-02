@@ -1,0 +1,86 @@
+Table positions { 
+  position_id integer [primary key, increment] 
+  title varchar(255) 
+  description text 
+} 
+ 
+Table employers { 
+  employer_id integer [primary key, increment] 
+  name varchar(255) 
+  location varchar(255) 
+  industry varchar(255) 
+} 
+ 
+Table employees { 
+  employee_id integer [primary key, increment] 
+  first_name varchar(255) 
+  last_name varchar(255) 
+  position_id integer 
+  employer_id integer 
+} 
+ 
+Table salaries { 
+  salary_id integer [primary key, increment] 
+  employee_id integer 
+  amount decimal(10,2) 
+  start_date date 
+  end_date date 
+} 
+ 
+Table grafic_raboty { 
+  schedule_id integer [primary key, increment] 
+  employee_id integer 
+  start_time time 
+  end_time time 
+  work_date date 
+} 
+ 
+Table addresses { 
+  address_id integer [primary key, increment] 
+  employee_id integer 
+  address_line1 varchar(255) 
+  address_line2 varchar(255) 
+  city varchar(255) 
+  state varchar(255) 
+  postal_code varchar(10) 
+  country varchar(255) 
+} 
+
+// ____________________________________new
+
+Table projects {
+  project_id INT [primary key, increment]
+  project_name VARCHAR(255) [not null]
+  start_date DATE
+  end_date DATE
+  budget DECIMAL(15, 2)
+}
+
+Table tasks {
+  task_id INT [primary key, increment]
+  project_id INT
+  employee_id INT
+  task_name VARCHAR(255) [not null]
+  due_date DATE
+  status VARCHAR(50)
+}
+
+Table experience {
+  experience_id INT [primary key, increment]
+  employee_id INT
+  company_name VARCHAR(255) [not null]
+  position VARCHAR(255) [not null]
+  start_date DATE
+  end_date DATE
+  description TEXT
+}
+
+Ref: tasks.project_id > projects.project_id // Один ко многим
+Ref: tasks.employee_id > employees.employee_id // Один ко многим
+Ref: experience.employee_id > employees.employee_id // Один ко многим
+
+Ref: employees.position_id > positions.position_id // many-to-one 
+Ref: employees.employer_id > employers.employer_id // many-to-one 
+Ref: salaries.employee_id > employees.employee_id // many-to-one 
+Ref: grafic_raboty.employee_id > employees.employee_id // many-to-one 
+Ref: addresses.employee_id > employees.employee_id // many-to-one
