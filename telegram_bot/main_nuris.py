@@ -2,7 +2,7 @@ from config import TOKEN
 from database.models import models_main
 import asyncio
 from aiogram import Bot, Dispatcher
-from handlers.commands import router
+from handlers.commands_nuris import router
 
 import logging
 import sys
