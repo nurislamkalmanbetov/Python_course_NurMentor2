@@ -7,12 +7,8 @@ from sqlalchemy.ext.asyncio import (create_async_engine,AsyncSession,
 
 from config import MYSQL_URL
 
-
-
 engine = create_async_engine(MYSQL_URL,echo=True)
 async_session = async_sessionmaker(engine, expire_on_commit=False)
-
-
 
 class Base(DeclarativeBase,AsyncAttrs):
     pass
@@ -46,11 +42,10 @@ class Rab(Base):
 
 
 async def models_main():
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
-        
-        
-        async with async_session() as session:
-            department = Department(name = 'Marketing')
-            session.add(department)
-            await session.commit()
+    async with async_session() as session:
+                department = Rab(first_name = 'Robert',last_name = 'Downney jr.',
+                                age = 34,salary = 5000.00,
+                                email = 'IronMan@gmail.com',phone = 666,
+                                address = 'Mexico',department_id = 6)
+                session.add(department)
+                await session.commit()
