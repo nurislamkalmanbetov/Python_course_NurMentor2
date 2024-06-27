@@ -1,0 +1,13 @@
+1. check your chrome version - chrome://version/
+2. update youre chrome - https://www.google.com.sg/intl/en/chrome/next-steps.html?statcb=1&installdataindex=empty&defaultbrowser=0
+3. download chromedriver - https://sites.google.com/chromium.org/driver/downloads  
+(Если версия выше, нажми на "the Chrome for Testing availability dashboard.")
+4. download chromedriver - https://googlechromelabs.github.io/chrome-for-testing/#stable
+(Это для Виндовс win64 - как узнать, какой 64 или 32? Пуск, Параметры, О системе)
+5. Выбираешь ссылку и вставляешь в url и скачивается 
+6. После скачивания, идешь в диск С, создаешь webdriver и всавляешь туда со скачанного внутренности webdriver
+и переставляешь со скачанного драйвера на свой. 
+7. Пуск, Система, О системе, Дополнительные Параметры, Переменные среды, Системные переменные, Path, Создать, 
+пишешь там - C:\chromedriver, OK 
+8. python -m venv venv 
+9. pip install selenium 
