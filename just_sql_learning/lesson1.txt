@@ -1,0 +1,87 @@
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL,
+    category VARCHAR(255),
+    stock INT,
+    supplier VARCHAR(255),
+    rating DECIMAL(3, 2),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    discount DECIMAL(5, 2),
+    sku VARCHAR(50),
+    weight DECIMAL(10, 3),
+    dimensions VARCHAR(255)
+);
+
+INSERT INTO products (name, description, price, category, stock, supplier, rating, discount, sku, weight, dimensions)
+VALUES
+('Ноутбук', 'Мощный ноутбук с процессором Intel i7 и 16GB оперативной памяти', 85000.00, 'Электроника', 50, 'Поставщик A', 4.5, 10.00, 'SKU12345', 2.5, '35x25x2 см'),
+('Смартфон', 'Современный смартфон с экраном 6.5 дюймов и двойной камерой', 45000.00, 'Электроника', 100, 'Поставщик B', 4.7, 5.00, 'SKU12346', 0.18, '15x7x0.8 см'),
+('Телевизор', '4K UHD телевизор с диагональю 55 дюймов', 75000.00, 'Электроника', 30, 'Поставщик C', 4.3, 15.00, 'SKU12347', 10.0, '122x71x8 см'),
+('Холодильник', 'Двухкамерный холодильник с системой No Frost', 60000.00, 'Бытовая техника', 20, 'Поставщик D', 4.6, 12.00, 'SKU12348', 70.0, '60x70x200 см'),
+('Стиральная машина', 'Стиральная машина с загрузкой 7 кг и 1400 оборотов в минуту', 35000.00, 'Бытовая техника', 40, 'Поставщик E', 4.4, 8.00, 'SKU12349', 65.0, '60x55x85 см'),
+('Микроволновая печь', 'Микроволновая печь с грилем и объемом 25 литров', 15000.00, 'Бытовая техника', 60, 'Поставщик F', 4.2, 10.00, 'SKU12350', 15.0, '50x40x30 см'),
+('Утюг', 'Утюг с паровым ударом и керамической подошвой', 3000.00, 'Мелкая бытовая техника', 80, 'Поставщик G', 4.8, 5.00, 'SKU12351', 1.2, '30x15x12 см'),
+('Пылесос', 'Беспроводной пылесос с мощностью 150 Вт и емкостью аккумулятора 2500 мАч', 20000.00, 'Мелкая бытовая техника', 35, 'Поставщик H', 4.7, 7.00, 'SKU12352', 3.0, '25x15x115 см'),
+('Электрочайник', 'Электрочайник с объемом 1.7 литра и мощностью 2200 Вт', 2500.00, 'Мелкая бытовая техника', 100, 'Поставщик I', 4.5, 3.00, 'SKU12353', 1.5, '25x20x30 см'),
+('Тостер', 'Тостер на 2 ломтика с функцией разморозки и подогрева', 2000.00, 'Мелкая бытовая техника', 50, 'Поставщик J', 4.4, 4.00, 'SKU12354', 2.0, '30x20x20 см');
+
+_______________________________________________________________________________________________________
+
+CREATE TABLE orders (
+    id SERIAL PRIMARY KEY,
+    order_number VARCHAR(100) NOT NULL UNIQUE,
+    customer_name VARCHAR(255) NOT NULL,
+    customer_email VARCHAR(255),
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    shipping_address TEXT,
+    billing_address TEXT
+);
+
+
+Таблица деталей заказа (order_items)
+Эта таблица будет связана с таблицей заказов и продуктов для хранения деталей каждого заказа.
+
+CREATE TABLE order_items (
+    id SERIAL PRIMARY KEY,
+    order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
+    product_id INTEGER REFERENCES products(id),
+    quantity INTEGER NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    total DECIMAL(10, 2) NOT NULL
+);
+
+INSERT INTO orders (order_number, customer_name, customer_email, total_amount, status, shipping_address, billing_address)
+VALUES
+('ORD001', 'Иван Иванов', 'ivanov@example.com', 1000.00, 'processing', 'ул. Пушкина, д. 10', 'ул. Лермонтова, д. 20'),
+('ORD002', 'Мария Петрова', 'petrova@example.com', 500.00, 'completed', 'ул. Чехова, д. 5', 'ул. Тургенева, д. 15');
+
+INSERT INTO order_items (order_id, product_id, quantity, price, total)
+VALUES
+(1, 1, 2, 500.00, 1000.00),
+(2, 2, 1, 500.00, 500.00);
+
+_______________________________________________________________________________________________________
+
+CREATE TABLE customers (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(20),
+    address TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO customers (first_name, last_name, email, phone, address) VALUES
+('Иван', 'Иванов', 'ivanov@example.com', '+79000000001', 'ул. Ленина, д. 1, кв. 1'),
+('Мария', 'Петрова', 'petrova@example.com', '+79000000002', 'ул. Пушкина, д. 2, кв. 2'),
+('Сергей', 'Сидоров', 'sidorov@example.com', '+79000000003', 'ул. Мира, д. 3, кв. 3'),
+('Елена', 'Кузнецова', 'kuznetsova@example.com', '+79000000004', 'ул. Гоголя, д. 4, кв. 4'),
+('Дмитрий', 'Алексеев', 'alekseev@example.com', '+79000000005', 'ул. Чехова, д. 5, кв. 5');
+
+_______________________________________________________________________________________________________

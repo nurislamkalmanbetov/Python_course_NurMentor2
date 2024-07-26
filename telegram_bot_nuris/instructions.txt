@@ -1,0 +1,1 @@
+asyncio - https://mastergroosha.github.io/aiogram-3-guide/messages/#uploading-media

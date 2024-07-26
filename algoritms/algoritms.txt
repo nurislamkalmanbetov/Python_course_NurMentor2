@@ -1,0 +1,61 @@
+Сортировка
+    Пузырьковая сортировка (Bubble Sort)
+        Сортировка вставками (Insertion Sort)
+        Сортировка выбором (Selection Sort)
+        Быстрая сортировка (Quick Sort)
+        Сортировка слиянием (Merge Sort)
+        Сортировка кучей (Heap Sort)
+        Гномья сортировка (Gnome Sort)
+        Сортировка Шелла (Shell Sort)
+        Сортировка подсчетом (Counting Sort)
+        Поразрядная сортировка (Radix Sort)
+        Коктейльная сортировка (Cocktail Shaker Sort)
+        Сортировка бинарной вставкой (Binary Insertion Sort)
+        
+Поиск
+    Линейный поиск (Linear Search)
+    Бинарный поиск (Binary Search)
+    Интерполяционный поиск (Interpolation Search)
+    Экспоненциальный поиск (Exponential Search)
+    Фибоначчиев поиск (Fibonacci Search)
+    
+Рекурсия
+    Факториал числа (Factorial)
+        Числа Фибоначчи (Fibonacci Sequence)
+        Ханойская башня (Tower of Hanoi)
+        Обратное строковое преобразование (Reverse String)
+        Проверка палиндрома (Palindrome Check)
+        
+Структуры данных
+    Стек (Stack)
+        Очередь (Queue)
+        Дек (Deque)
+        Связный список (Linked List)
+        Двусвязный список (Doubly Linked List)
+        Дерево (Tree)
+        Двоичное дерево поиска (Binary Search Tree)
+        Куча (Heap)
+        Граф (Graph)
+        Хеш-таблица (Hash Table)
+        
+Обходы
+    Обход дерева в глубину (DFS)
+    Обход дерева в ширину (BFS)
+    Обход графа в глубину (Graph DFS)
+    Обход графа в ширину (Graph BFS)
+    
+Динамическое программирование
+    Задача о рюкзаке (Knapsack Problem)
+    Нахождение наибольшей общей подпоследовательности (Longest Common Subsequence)
+    Нахождение наибольшей общей подстроки (Longest Common Substring)
+    Задача о размене монет (Coin Change Problem)
+    Задача о составлении слова (Word Break Problem)
+    
+Графы
+    Алгоритм Дейкстры (Dijkstra's Algorithm)
+    Алгоритм Флойда-Уоршелла (Floyd-Warshall Algorithm)
+    Алгоритм Беллмана-Форда (Bellman-Ford Algorithm)
+    Алгоритм Прима (Prim's Algorithm)
+    Алгоритм Крускала (Kruskal's Algorithm)
+    Поиск сильных компонент связности (Kosaraju's Algorithm)
+    Поиск циклов в графе (Cycle Detection)
