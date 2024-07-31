@@ -1,52 +1,126 @@
-1. Основы SQL: SELECT
+1)
+Основы SQL: SELECT
+Эти запросы извлекают данные из таблиц.
+
 SELECT * FROM products;
 SELECT name, price FROM products;
 SELECT * FROM orders;
 SELECT * FROM customers;
+--------------------------------------------------------------------------------
+2)
+Фильтрация данных: WHERE
+Эти запросы извлекают данные, соответствующие определённым условиям.
 
-2. Фильтрация данных: WHERE
 SELECT * FROM products WHERE price > 100;
 SELECT * FROM orders WHERE status = 'completed';
 SELECT * FROM customers WHERE last_name = 'Иванов';
+--------------------------------------------------------------------------------
+3)
+Условие LIKE
+Эти запросы используют условие LIKE для поиска записей, соответствующих шаблону.
 
-3. Сортировка данных: ORDER BY
+SELECT * FROM orders WHERE customer_name LIKE '%Иван%';
+SELECT * FROM orders WHERE customer_email LIKE '%@example.com';
+SELECT * FROM orders WHERE customer_name LIKE '%Иван%' OR customer_name LIKE '%Петр%';
+--------------------------------------------------------------------------------
+4)
+Сортировка данных: ORDER BY
+Эти запросы сортируют результаты в указанном порядке.
+
 SELECT * FROM products ORDER BY price ASC;
 SELECT * FROM orders ORDER BY created_at DESC;
+--------------------------------------------------------------------------------
+5)
+Ограничение количества строк: LIMIT
+Эти запросы ограничивают количество возвращаемых строк.
 
-4. Ограничение количества строк: LIMIT
 SELECT * FROM products ORDER BY price DESC LIMIT 5;
+--------------------------------------------------------------------------------
+6)
+Агрегатные функции: COUNT, SUM, AVG, MAX, MIN
+Эти запросы используют агрегатные функции для вычислений над множествами строк.
 
-5. Агрегатные функции: COUNT, SUM, AVG, MAX, MIN
 SELECT COUNT(*) FROM products;
 SELECT SUM(total_amount) FROM orders;
 SELECT AVG(price) FROM products;
 SELECT MAX(price), MIN(price) FROM products;
+--------------------------------------------------------------------------------
+7)
+Группировка данных: GROUP BY
+Эти запросы группируют строки по одному или нескольким столбцам.
 
-6. Группировка данных: GROUP BY
 SELECT status, COUNT(*) FROM orders GROUP BY status;
+--------------------------------------------------------------------------------
+8)
+Группировка данных с условием HAVING
+Эти запросы группируют строки и фильтруют группы, соответствующие условиям.
 
-7. Вставка данных: INSERT INTO
+SELECT customer_email, COUNT(*) AS order_count
+FROM orders
+GROUP BY customer_email
+HAVING COUNT(*) > 1;
+
+SELECT product_id, AVG(total_amount) AS avg_amount
+FROM orders
+GROUP BY product_id
+HAVING AVG(total_amount) > 100;
+--------------------------------------------------------------------------------
+9)
+Вставка данных: INSERT INTO
+Эти запросы добавляют новые строки в таблицы.
+
 INSERT INTO products (name, description, price) VALUES ('Новый продукт', 'Описание продукта', 150.00);
 INSERT INTO customers (first_name, last_name, email, phone, address) VALUES ('Алексей', 'Сидоров', 'sidorov@example.com', '+79220000000', 'ул. Мира, д. 30');
+--------------------------------------------------------------------------------
+10)
+Обновление данных: UPDATE
+Эти запросы изменяют существующие данные в таблицах.
 
-8. Обновление данных: UPDATE
 UPDATE products SET price = 200.00 WHERE id = 1;
 UPDATE orders SET status = 'shipped' WHERE order_number = 'ORD001';
+--------------------------------------------------------------------------------
+11)
+Удаление данных: DELETE
+Эти запросы удаляют данные из таблиц.
 
-9. Удаление данных: DELETE
 DELETE FROM products WHERE id = 10;
+--------------------------------------------------------------------------------
+12)
+Соединение таблиц: JOIN
+Эти запросы объединяют данные из нескольких таблиц на основе условий соединения.
 
-10. Соединение таблиц: JOIN
-Объединение таблиц orders(*) - customers(ИМЯ,ФАМИЛИЯ)
 SELECT orders.*, customers.first_name, customers.last_name
 FROM orders
 JOIN customers ON orders.customer_email = customers.email;
+--------------------------------------------------------------------------------
+13)
+Создание и использование представлений (views)
+Эти запросы создают представления для удобного отображения данных.
 
-12. Создание и использование представлений (views)
-Создать представление для удобного просмотра заказов с информацией о клиентах:
 CREATE VIEW orders_with_customers AS
 SELECT orders.*, customers.first_name, customers.last_name
 FROM orders
 JOIN customers ON orders.customer_email = customers.email;
 
 SELECT * FROM orders_with_customers;
+--------------------------------------------------------------------------------
+14) 
+UNION - работает без дубпликатов
+
+SELECT first_name FROM customers
+UNION
+SELECT customer_name FROM orders;
+
+с дубликатами 
+SELECT first_name FROM customers4...
+UNION ALL
+SELECT customer_name FROM orders;
+--------------------------------------------------------------------------------
+15) 
+EXCEPT - оператор используется 
+для возвращения строк из первой выборки, которых нет во второй выборке
+SELECT first_name FROM customers
+EXCEPT
+SELECT customer_name FROM orders;
+
+--------------------------------------------------------------------------------
